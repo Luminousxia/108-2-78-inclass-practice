@@ -154,11 +154,33 @@ print(`小明108學年課表C`)
 ```
 
 ```{r}
-author <- list("Martin老師", "mtlin@gm.ntpu.edu.tw", ymd_hms("2020-03-25T07:17:40Z"))
+commit <- list(
+ author = list(name="Martin老師",email="mtlin@gm.ntpu.edu.tw", ymd_hms("2020-03-25T07:17:40Z")),
 
-committer <- c("emilyluckey", "emily007@gmail.com", "2020-03-26T08:18:40Z")
+committer = list(name="emilyluckey",email="emily007@gmail.com",ymd_hms("2020-03-26T08:18:40Z")),
 
-message <- c("update")
+message = "update")
+print(commit)
 ```
 
+```{r}
+browseURL("https://api.github.com/repos/tpemartin/108-2-56-inclass-practice/commits") 
+```
+
+```{r}
+library(jsonlite)
+toJSON(commit)
+```
+
+```{r}
+library(jsonlite)
+fromJSON("https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=rdec-key-123-45678-011121314&format=JSON") -> weather_next36hours
+```
+
+```{r}
+save(commit,listExmaple,'小名108學年課表D',file="today.rda")
+```
+```{r}
+load("today.Rda")
+```
 
