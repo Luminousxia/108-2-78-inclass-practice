@@ -112,5 +112,53 @@ studenTime <- c(ymd_hms("2020-03-04T08:15:28Z"),ymd_hms("2020-03-11 16:11:43","2
 with_tz(studenTime, tzone="Europe/Paris")
 ```
 
+```{r}
+vectorExample <- c(2,6,7)
+listExample <- list(2,6,7)
+
+print(vectorExample)
+print(listExample)
+```
+
+```{r}
+c("2020-03-31T13:40:55Z","一芳","2","水果")
+library(lubridate)
+list(ymd_hms("2020-03-31T13:40:55Z"),"一芳","2","水果")
+
+library(lubridate)
+`小明交易1` <- list(
+  ymd_hms("2020-03-31T13:40:55Z"), # Date/Time class
+  "一芳", # character
+  2, # numeric
+  "水果茶" # character
+)
+print(`小明交易1`)
+```
+```{r}
+`小明108學年課表A` <- list(c("108-1","高級會計學","高等統計學"),c("108-2","食在拉丁美洲"))
+print(`小明108學年課表A`)
+
+`小明108學年課表B` <- list(
+  list("108-1","高級會計學","高等統計學"),
+  list("108-2","食在拉丁美洲")
+)
+print(`小明108學年課表B`)
+```
+
+```{r}
+#nested list
+`小明108學年課表C` <- list(
+  list(c("108-1"),c("高級會計學","高等統計學")),
+  list(c("108-2"),c("食在拉丁美洲")))
+print(`小明108學年課表C`)
+```
+
+```{r}
+author <- list("Martin老師", "mtlin@gm.ntpu.edu.tw", ymd_hms("2020-03-25T07:17:40Z"))
+
+committer <- c("emilyluckey", "emily007@gmail.com", "2020-03-26T08:18:40Z")
+
+message <- c("update")
+```
 
 
