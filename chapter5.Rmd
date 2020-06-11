@@ -503,3 +503,19 @@ dateInput <- today()
 locationInput <- "新北市"
 ```
 
+```{r}
+if(condition){
+  Body for TRUE
+  }
+```
+
+```{r}
+readline(prompt = "請輸入你的學號") -> studentId 
+
+if(
+  str_detect(studentId,'^[43](1[01][0-9]|9[0-9])[0-9]{5}$',negate=T) # condition: 是否輸入學號正確？
+) {
+  warning("你所輸入的學號不正確")
+}
+```
+
